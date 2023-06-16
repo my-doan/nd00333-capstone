@@ -30,12 +30,14 @@ For my AutoML model, I set my experiment to time out after 30 minutes so that it
 
 ### Results
 
-My best AutoML model used a VotingEnsemble algorithm, yielding an accuracy of 78.8%. In the future, I would use a different primary metric, perhaps AUC since the `Outcome` variable is imbalanced (268 of 768 patients have diabetes). I believe this would lead to a higher success rate.
+My best AutoML model used a VotingEnsemble algorithm, yielding an accuracy of 78.8%. While this rate is not necessarily low, I think the model performs poorly in the context of healthcare and medicine. One would want a highly accurate model if it is testing for a disease or condition. In the future, I would use a different primary metric, perhaps AUC since the `Outcome` variable is imbalanced (268 of 768 patients have diabetes). I would also expand the dataset so that it was not filtered to females at least 21 years old of Pima Indian heritage. I believe this would lead to a higher success rate.
 
 ![automl-model](best-automl-model.PNG)
 ![run-widget-ml](run-details-automl.PNG)
 
-To help me ansswer my originial question, I looked into the important features of the model. The model found that glucose levels was the most important feature, followed by BMI, age, and number of pregnancies (note that this dataset only contains female patients).
+*I have had this issue of my run detalis widget not properly showing the widget even though the logs were showing. I've discussed this in the last project and they were okay with it*
+
+To help me ansswer my original question, I looked into the important features of the model. The model found that glucose levels was the most important feature, followed by BMI, age, and number of pregnancies (note that this dataset only contains female patients).
 
 ![important](important-features.PNG)
 
@@ -52,9 +54,11 @@ The best model with thesse hyperparameters tuned had a value of 0.463 for `C` an
 ![best-h-mod](best_model.PNG)
 ![best-h-widget](run-details-widget.PNG)
 
+*I have had this issue of my run details widget not properly showing the widget even though the logs were showing. I've discussed this in the last project and they were okay with it*
+
 While the acccuracy is higher than my AutoML model, I am not sure if it is entirely accurate as the model is claiming to be 100% accurate. This leads me to believe that the data may be skewed in some areas or have some underlying bias, and we already know that the `Outcome` variable is imbalanced. I could also choose different hyperparamters or vaalues for the ones I've chosen to create a more "accurate" or in this case, less accurate, model. 
 
-Though I'm not entirely sure how these hyperparameters affect the accuracy, it seems that the higher the number of maxximum iterations, the higher the accuravy will be, according to the plot below. The regularization strength does not seem to have a clear pattern, though it could be argued that it needs to be higher. There seems to be 2 clusters of accuracy when shown against `C`, one ckuster with the accuracy around 64% and the other closer to 100%. 
+Though I'm not entirely sure how these hyperparameters affect the accuracy, it seems that the higher the number of maxximum iterations, the higher the accuravy will be, according to the plot below. The regularization strength does not seem to have a clear pattern, though it could be argued that it needs to be higher. There seems to be 2 clusters of accuracy when shown against `C`, one cluster with the accuracy around 64% and the other closer to 100%. 
 
 ![c iter](c_iter.PNG)
 ![c-acc](c_accuracy.PNG)
