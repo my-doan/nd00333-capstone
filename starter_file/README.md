@@ -33,7 +33,7 @@ For my AutoML model, I set my experiment to time out after 30 minutes so that it
 My best AutoML model used a VotingEnsemble algorithm, yielding an accuracy of 78.8%. While this rate is not necessarily low, I think the model performs poorly in the context of healthcare and medicine. One would want a highly accurate model if it is testing for a disease or condition. In the future, I would use a different primary metric, perhaps AUC since the `Outcome` variable is imbalanced (268 of 768 patients have diabetes). I would also expand the dataset so that it was not filtered to females at least 21 years old of Pima Indian heritage. I believe this would lead to a higher success rate.
 
 ![automl-model](best-automl-model.PNG)
-![run-widget-ml](run-details-automl.PNG)
+![run-widget-ml](auto-widget.PNG)
 
 *I have had this issue of my run detalis widget not properly showing the widget even though the logs were showing. I've discussed this in the last project and they were okay with it*
 
@@ -52,7 +52,7 @@ For this experiment, I used a logistic regression model since my target variable
 The best model with thesse hyperparameters tuned had a value of 0.463 for `C` and 100 for `max_iter`, which resulted with an accuracy of 1. 
 
 ![best-h-mod](best_model.PNG)
-![best-h-widget](run-details-widget.PNG)
+![best-h-widget](hyper-widget.PNG)
 
 *I have had this issue of my run details widget not properly showing the widget even though the logs were showing. I've discussed this in the last project and they were okay with it*
 
